@@ -6,6 +6,8 @@ if(MSVC)
     set(MY_VERSIONINFO_RC "${CMAKE_SOURCE_DIR}/VersionInfo.rc")
     configure_file("${CMAKE_SOURCE_DIR}/VersionInfo.rc.in"
                    "${MY_VERSIONINFO_RC}")
+else()
+	add_definitions("-fvisibility=hidden")			   
 endif()
 
 file(GLOB_RECURSE CURRENT_HEADERS  *.h *.hpp)
