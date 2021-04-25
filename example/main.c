@@ -19,6 +19,7 @@
 #include "cgmbox/cgmbox_sm2.h"
 #include "cgmbox/cgmbox_sm3.h"
 #include "cgmbox/cgmbox_sm4.h"
+#include "cgmbox/cgmbox_prng.h"
 
 static void cgmbox_log_debug_bin(char *file_name, int file_line, char *data, unsigned char *bin, unsigned int bin_len)
 {
@@ -2035,6 +2036,24 @@ static void example_sm2()
 		g_success_example++;
 		printf("[INFO]Line%d sm2 encrypt algorithns test success\n", __LINE__);
 	}
+}
+
+void example_prng()
+{
+	unsigned char data[1024] = { 0 };
+	unsigned int data_len = 1024;
+
+	cgmbox_prng_genrnd_by_system(data, 0);
+	cgmbox_prng_genrnd_by_linear_congruential_method(data, 0);
+	cgmbox_prng_genrnd_by_sm3(data, 0);
+
+	cgmbox_prng_genrnd_by_system(data, data_len);
+	cgmbox_prng_genrnd_by_linear_congruential_method(data, data_len);
+	cgmbox_prng_genrnd_by_sm3(data, data_len);
+
+	g_all_example++;
+	g_success_example++;
+	printf("[INFO]Line%d prng algorithns test success\n", __LINE__);
 }
 
 int main()

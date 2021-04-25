@@ -85,7 +85,7 @@ CGMBOX_EXPORT void cgmbox_sm3_final(cgmbox_sm3_ctx_t *ctx, unsigned char digest[
 * Output         : digest        : 杂凑值
 * Return         : 成功返回 0
 *******************************************************************************/
-CGMBOX_EXPORT void cgmbox_sm3(const unsigned char *data, unsigned int datalen, unsigned char digest[CGMBOX_SM3_DIGEST_LENGTH]);
+CGMBOX_EXPORT void cgmbox_sm3(const unsigned char *data, unsigned int data_len, unsigned char digest[CGMBOX_SM3_DIGEST_LENGTH]);
 
 
 /*******************************************************************************

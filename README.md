@@ -4,7 +4,7 @@ The example needs to be compiled on the new platform to ensure the algorithm acc
 
 Problem feedback: Summer-Time-2020@163.com
 
-Feature highlights：support sm2、sm3、sm4 algorithm
+Feature highlights：support sm2、sm3、sm4、prng algorithm
 
 Copyright (c) Summer-Time-2020.  All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License");
